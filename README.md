@@ -94,8 +94,6 @@ Preprocessing და Feature Engineering ლოგიკა თითოეუ�
 | LogisticRegression | 0.6104          | 0.4729     |
 
 
-> შენიშვნა: Notebooks Kaggle-ზე სრული dataset-ით (590k row) ბევრად მაღალ AUC-ს იძლევა — ზემოთ მოცემული რიცხვები local sample-ზეა.
-
 ## ინტერპრეტაცია
 
 - საუკეთესო Test AUC მიიღო **GradientBoosting**-მა (0.5101), მეორე ადგილზე MLP (0.5087).
@@ -116,11 +114,8 @@ Preprocessing და Feature Engineering ლოგიკა თითოეუ�
 - ყველა მოდელს შორის ყველაზე მაღალი holdout Test AUC ჰქონდა (0.5101).
 - CV-სა და test-ს შორის gap GradientBoosting-ში ყველაზე მცირეა — generalization უკეთესია.
 - boosting სტრატეგია ეფექტურია imbalanced fraud detection-ში, სადაც minority class-ის სწორი პრიორიტეტი მნიშვნელოვანია.
-- მოდელი inference pipeline-ად რეგისტრირდება MLflow Model Registry-ში — `sklearn.Pipeline` (preprocessing + classifier).
+- მოდელი inference pipeline-ად რეგისტრირდება MLflow Model Registry-ში 
 
-## Kaggle Submission შედეგი
-
-Inference notebook (`model_inference.ipynb`) ტვირთავს `IEEE_Fraud_BestModel`-ს MLflow Registry-დან, უშვებს real Kaggle test data-ზე და ქმნის `submission.csv`-ს.
 
 ## MLflow / DagsHub Tracking
 
